@@ -1,0 +1,16 @@
+name: Github actions events
+on:
+  push:
+    branches:
+      - main
+jobs:
+  showinfo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print info
+        run: |
+          echo "I am learing git and will work on github actions"
+  
+  
+    
+  
