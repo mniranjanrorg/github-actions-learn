@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: print info
         run: |
-          echo "I am learing git and will work on github actions "
+          echo "I am learing git and will work on github actions"
   
   
     
