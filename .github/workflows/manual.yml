@@ -1,6 +1,8 @@
 name: Trigger manually
 on:
-  workflow_dispatch
+  issues:
+    types:
+      - opened
 jobs:
   show-info:
     runs-on: ubuntu-latest
