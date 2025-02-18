@@ -1,4 +1,4 @@
-name: Trigger manually
+name: With Parameters
 on:
   workflow_dispatch:
     inputs:
@@ -10,7 +10,7 @@ jobs:
   show-info:
     runs-on: ubuntu-latest
     steps:
-      - name: Print echo
+      - name: Print Input Parameters
         run: |
-          echo "Print the word ${{ github.event.inputs.param1 }}"
+          echo "Print the input parameters ${{ github.event.inputs.param1 }}"
   
