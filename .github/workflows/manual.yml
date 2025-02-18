@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Print echo
         run: |
-          echo "Print the word {{ github.event.inputs.param1 }}"
+          echo "Print the word ${{ github.event.inputs.param1 }}"
   
