@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Print Input Parameters
         run: |
-          echo "Print the input parameters ${{ github.event.inputs.param1 }}"
+          echo "The input parameter is ${{ github.event.inputs.param1 }}"
   
