@@ -1,13 +1,16 @@
 name: Trigger manually
 on:
-  issues:
-    types:
-      - opened
+  workflow_dispatch:
+    inputs:
+      param1:
+        description: Write the words describing humans
+        required: true
+        default: ascetic
 jobs:
   show-info:
     runs-on: ubuntu-latest
     steps:
       - name: Print echo
         run: |
-          echo "This is run by workfow dispatch"
+          echo "Print the word {{ github.event.inputs.param1 }}"
   
