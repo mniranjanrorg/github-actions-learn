@@ -10,15 +10,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 14
+      - name: create working directory
+        run: mkdir npmworkingdir
       - name: list files
         run: ls -al
       - name: npm install
         run: |
-          cd ./github
+          cd ./npmworkingdir
           npm install
       - name: install dependencies
         run: |
-          cd ./github 
+          cd ./npmworkingdir 
           npm ci
       - name: npm build
         run: npm run buld
