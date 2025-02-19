@@ -11,7 +11,9 @@ jobs:
         with:
           node-version: 14
       - name: npm install
-        run: npm install
+        run: |
+          cd ./github-actions-learn/github-actions-learn/
+          npm install
       - name: install dependencies
         run: |
           cd ./github-actions-learn/github-actions-learn/ 
