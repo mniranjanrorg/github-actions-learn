@@ -13,7 +13,9 @@ jobs:
       - name: npm install
         run: npm install
       - name: install dependencies
-        run: npm ci
+        run: |
+          cd ./github-actions-learn/github-actions-learn/ 
+          npm ci
       - name: npm build
         run: npm run buld
       - name: deploy the application
