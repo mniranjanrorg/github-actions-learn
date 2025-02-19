@@ -12,16 +12,16 @@ jobs:
           node-version: 14
       - name: list files
         run: ls -al
-      # - name: npm install
-      #   run: |
-      #     cd ./github-actions-learn/github-actions-learn/
-      #     npm install
-      # - name: install dependencies
-      #   run: |
-      #     cd ./github-actions-learn/github-actions-learn/ 
-      #     npm ci
-      # - name: npm build
-      #   run: npm run buld
-      # - name: deploy the application
-      #   run: npm run deploy
-      #   if: github.refs == 'refs/heads/main' && github.event_name == 'push'
+      - name: npm install
+        run: |
+          cd ./github
+          npm install
+      - name: install dependencies
+        run: |
+          cd ./github 
+          npm ci
+      - name: npm build
+        run: npm run buld
+      - name: deploy the application
+        run: npm run deploy
+        if: github.refs == 'refs/heads/main' && github.event_name == 'push'
