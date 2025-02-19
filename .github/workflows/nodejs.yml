@@ -9,19 +9,15 @@ jobs:
       - name: setup nodejs
         uses: actions/setup-node@v4
         with:
-          node-version: 14
-      - name: create working directory
-        run: mkdir npmworkingdir
+          node-version: 20
       - name: list files
         run: ls -al
       - name: npm install
         run: |
-          cd ./npmworkingdir
+          npm init
           npm install
       - name: install dependencies
-        run: |
-          cd ./npmworkingdir 
-          npm ci
+        run: npm ci
       - name: npm build
         run: npm run buld
       - name: deploy the application
