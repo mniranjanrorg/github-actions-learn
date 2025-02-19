@@ -9,7 +9,7 @@ jobs:
       - name: setup nodejs
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 14
       - name: list files
         run: ls -al
       - name: npm install
@@ -18,8 +18,8 @@ jobs:
           npm install
       - name: install dependencies
         run: npm ci
-      # - name: npm build
-      #   run: npm run
+      - name: npm build
+        run: npm run
       - name: deploy the application.
         run: npm run deploy
         if: github.refs == 'refs/heads/main' && github.event_name == 'push'
