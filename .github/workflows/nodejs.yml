@@ -1,0 +1,21 @@
+name: nodejs installation
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+      - name: npm install
+        run: npm install
+      - name: install dependencies
+        run: npm ci
+      - name: npm build
+        run: npm run buld
+      - name: deploy the application
+        run: npm run deploy
+        if: github.refs == 'refs/heads/main' && github.event_name == 'push'
