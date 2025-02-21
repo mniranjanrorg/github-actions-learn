@@ -10,6 +10,10 @@ jobs:
       - name: print info
         run: |
           echo "I am learing git and will work on github actions"
+      - name: Create release
+        uses: actions/create-release@v1
+        with: 
+          tag_name: {{ github.run_number }}
   
   
     
