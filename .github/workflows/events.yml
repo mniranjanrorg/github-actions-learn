@@ -6,12 +6,16 @@ on:
 jobs:
   showinfo:
     runs-on: ubuntu-latest
+    permissions: 
+      contents: write
     steps:
       - name: print info
         run: |
           echo "I am learing git and will work on github actions"
       - name: Create release
         uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
         with: 
           tag_name: v{{ github.run_number }}
   
